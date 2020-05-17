@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 @pytest.fixture
 def driver(request):
     wd = webdriver.Chrome()
+    wd.implicitly_wait(3)
     request.addfinalizer(wd.quit)
     return wd
 
